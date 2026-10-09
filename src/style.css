@@ -1,16 +1,13 @@
 
-
 :root {
  font-family: 'Nunito', sans-serif;
  color: #29243A;
  background: #F5F1FC;
 }
 
-
 * {
  box-sizing: border-box;
 }
-
 
 body {
  min-width: 320px;
@@ -18,17 +15,14 @@ body {
  margin: 0;
 }
 
-
 button,
 input {
  font: inherit;
 }
 
-
 [hidden] {
  display: none !important;
 }
-
 
 .app-shell {
  width: min(100% - 32px, 1080px);
@@ -38,7 +32,6 @@ input {
  flex-direction: column;
 }
 
-
 .site-header {
  display: flex;
  align-items: center;
@@ -46,7 +39,6 @@ input {
  gap: 16px;
  padding-block: 24px;
 }
-
 
 .brand {
  display: inline-flex;
@@ -58,7 +50,6 @@ input {
  font-weight: 800;
 }
 
-
 .brand-icon {
  display: grid;
  place-items: center;
@@ -68,23 +59,19 @@ input {
  background: #FFD54F;
 }
 
-
 .header-tagline,
 .player-greeting {
  color: #716B80;
  font-weight: 700;
 }
 
-
 #app {
  flex: 1;
 }
 
-
 .screen {
  padding-block: 24px 48px;
 }
-
 
 .welcome-card,
 .ranking-card {
@@ -97,14 +84,12 @@ input {
  box-shadow: 0 8px 28px rgb(50 35 90 / 8%);
 }
 
-
 .welcome-card h1,
 .section-heading h1 {
  margin: 8px 0;
  font-size: clamp(1.8rem, 4vw, 2.6rem);
  line-height: 1.15;
 }
-
 
 .welcome-card > p,
 .ranking-description,
@@ -114,7 +99,6 @@ input {
  line-height: 1.7;
 }
 
-
 .eyebrow {
  color: #6750A4;
  font-size: 0.85rem;
@@ -123,24 +107,20 @@ input {
  text-transform: uppercase;
 }
 
-
 #profile-form,
 .form-group {
  display: grid;
  gap: 12px;
 }
 
-
 #profile-form {
  gap: 24px;
  margin-top: 32px;
 }
 
-
 .form-group label {
  font-weight: 800;
 }
-
 
 .form-group input {
  width: 100%;
@@ -152,13 +132,11 @@ input {
  color: #29243A;
 }
 
-
 .form-group small,
 .helper-text {
  margin: 0;
  font-size: 0.85rem;
 }
-
 
 .button {
  display: inline-flex;
@@ -172,17 +150,14 @@ input {
  cursor: pointer;
 }
 
-
 .button-primary {
  background: #6750A4;
  color: white;
 }
 
-
 .button-primary:hover {
  background: #503887;
 }
-
 
 .button-secondary {
  border: 1px solid #E7DFF8;
@@ -190,13 +165,11 @@ input {
  color: #6750A4;
 }
 
-
 .mascot {
  margin-top: 24px;
  text-align: center;
  font-size: 2.5rem;
 }
-
 
 .section-heading {
  display: flex;
@@ -206,14 +179,12 @@ input {
  margin-bottom: 28px;
 }
 
-
 .stats-grid {
  display: grid;
  grid-template-columns: repeat(3, minmax(0, 1fr));
  gap: 16px;
  margin-bottom: 24px;
 }
-
 
 .stat-card {
  display: grid;
@@ -225,18 +196,15 @@ input {
  box-shadow: 0 8px 28px rgb(50 35 90 / 8%);
 }
 
-
 .stat-card span {
  color: #716B80;
  font-size: 0.9rem;
 }
 
-
 .stat-card strong {
  color: #6750A4;
  font-size: 1.7rem;
 }
-
 
 .game-board {
  display: grid;
@@ -245,7 +213,6 @@ input {
  max-width: 700px;
  margin-inline: auto;
 }
-
 
 .memory-card {
  display: grid;
@@ -261,11 +228,9 @@ input {
  cursor: pointer;
 }
 
-
 .memory-card:hover {
  background: #503887;
 }
-
 
 .memory-card span {
  display: grid;
@@ -276,7 +241,6 @@ input {
  border-radius: 50%;
 }
 
-
 .game-actions {
  display: flex;
  justify-content: center;
@@ -285,22 +249,18 @@ input {
  margin-top: 28px;
 }
 
-
 .trophy {
  font-size: 3rem;
 }
-
 
 .ranking-card {
  width: 100%;
  padding: clamp(16px, 3vw, 32px);
 }
 
-
 .table-wrapper {
  overflow-x: auto;
 }
-
 
 table {
  width: 100%;
@@ -308,26 +268,22 @@ table {
  text-align: left;
 }
 
-
 th,
 td {
  padding: 16px 12px;
  border-bottom: 1px solid #E7DFF8;
 }
 
-
 th {
  color: #6750A4;
  font-size: 0.9rem;
 }
-
 
 .empty-ranking {
  padding-block: 32px;
  color: #716B80;
  text-align: center;
 }
-
 
 .site-footer {
  padding-block: 20px;
@@ -342,7 +298,6 @@ th {
    width: min(100% - 24px, 1080px);
  }
 
-
  .site-header {
    align-items: flex-start;
    flex-direction: column;
@@ -350,64 +305,52 @@ th {
    padding-block: 18px;
  }
 
-
  .header-tagline {
    margin: 0;
    font-size: 0.9rem;
  }
 
-
  .screen {
    padding-top: 16px;
  }
-
 
  .section-heading {
    align-items: flex-start;
  }
 
-
  .stats-grid {
    gap: 8px;
  }
-
 
  .stat-card {
    padding: 12px 8px;
    text-align: center;
  }
 
-
  .stat-card span {
    font-size: 0.75rem;
  }
 
-
  .stat-card strong {
    font-size: 1.35rem;
  }
-
 
  .game-board {
    grid-template-columns: repeat(3, minmax(0, 1fr));
    gap: 10px;
  }
 
-
  .memory-card {
    border-radius: 14px;
  }
-
 
  .game-actions {
    flex-direction: column;
  }
 
-
  .game-actions .button {
    width: 100%;
  }
-
 
  th,
  td {

@@ -1,60 +1,80 @@
-import './style.css'
-import heroImg from './assets/hero.png'
-import javascriptLogo from './assets/javascript.svg'
-import viteLogo from './assets/vite.svg'
-import { setupCounter } from './counter.js'
 
-document.querySelector('#app').innerHTML = `
-<section id="center">
-  <div class="hero">
-    <img src="${heroImg}" class="base" width="170" height="179">
-    <img src="${javascriptLogo}" class="framework" alt="JavaScript logo"/>
-    <img src="${viteLogo}" class="vite" alt="Vite logo" />
-  </div>
-  <div>
-    <h1>Get started</h1>
-    <p>Edit <code>src/main.js</code> and save to test <code>HMR</code></p>
-  </div>
-  <button id="counter" type="button" class="counter"></button>
-</section>
+const profileScreen = document.querySelector('#profile-screen');
+const gameScreen = document.querySelector('#game-screen');
+const rankingScreen = document.querySelector('#ranking-screen');
 
-<div class="ticks"></div>
+const profileForm = document.querySelector('#profile-form');
+const usernameInput = document.querySelector('#username');
+const pokemonInput = document.querySelector('#pokemon-search');
+const playerGreeting = document.querySelector('#player-greeting');
 
-<section id="next-steps">
-  <div id="docs">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#documentation-icon"></use></svg>
-    <h2>Documentation</h2>
-    <p>Your questions, answered</p>
-    <ul>
-      <li>
-        <a href="https://vite.dev/" target="_blank">
-          <img class="logo" src="${viteLogo}" alt="" />
-          Explore Vite
-        </a>
-      </li>
-      <li>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank">
-          <img class="button-icon" src="${javascriptLogo}" alt="">
-          Learn more
-        </a>
-      </li>
-    </ul>
-  </div>
-  <div id="social">
-    <svg class="icon" role="presentation" aria-hidden="true"><use href="/icons.svg#social-icon"></use></svg>
-    <h2>Connect with us</h2>
-    <p>Join the Vite community</p>
-    <ul>
-      <li><a href="https://github.com/vitejs/vite" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#github-icon"></use></svg>GitHub</a></li>
-      <li><a href="https://chat.vite.dev/" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#discord-icon"></use></svg>Discord</a></li>
-      <li><a href="https://x.com/vite_js" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#x-icon"></use></svg>X.com</a></li>
-      <li><a href="https://bsky.app/profile/vite.dev" target="_blank"><svg class="button-icon" role="presentation" aria-hidden="true"><use href="/icons.svg#bluesky-icon"></use></svg>Bluesky</a></li>
-    </ul>
-  </div>
-</section>
+const movesCount = document.querySelector('#moves-count');
+const pairsCount = document.querySelector('#pairs-count');
+const timer = document.querySelector('#timer');
 
-<div class="ticks"></div>
-<section id="spacer"></section>
-`
+function showScreen(screenToShow) {
+  const screens = [
+    profileScreen,
+    gameScreen,
+    rankingScreen,
+  ];
 
-setupCounter(document.querySelector('#counter'))
+  screens.forEach((screen) => {
+    screen.hidden = screen !== screenToShow;
+  });
+
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+profileForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  if (!profileForm.reportValidity()) {
+    return;
+  }
+
+  const username = usernameInput.value.trim();
+  const pokemon = pokemonInput.value.trim();
+
+  if (username.length < 3 || username.length > 15 || !pokemon) {
+    return;
+  }
+
+  playerGreeting.textContent = `¡A por todas, ${username}!`;
+
+  // Datos temporales para comprobar el diseño.
+  // En otra fase conectaremos el perfil con el almacenamiento.
+  playerGreeting.dataset.pokemon = pokemon;
+
+  showScreen(gameScreen);
+});
+
+document.querySelector('#ranking-from-game')
+  .addEventListener('click', () => {
+    showScreen(rankingScreen);
+  });
+
+document.querySelector('#back-to-game')
+  .addEventListener('click', () => {
+    showScreen(gameScreen);
+  });
+
+document.querySelector('#new-profile')
+  .addEventListener('click', () => {
+    profileForm.reset();
+    showScreen(profileScreen);
+    usernameInput.focus();
+  });
+
+document.querySelector('#restart-button')
+  .addEventListener('click', () => {
+    movesCount.textContent = '0';
+    pairsCount.textContent = '0 / 6';
+    timer.textContent = '00:00';
+
+    // El reinicio completo se implementará con la lógica del juego.
+    showScreen(gameScreen);
+  });
+
+// La aplicación comienza en la pantalla de creación del perfil.
+showScreen(profileScreen);
