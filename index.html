@@ -1,13 +1,210 @@
+
 <!doctype html>
-<html lang="en">
+<html lang="es">
   <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>pokememory</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+      name="description"
+      content="PokeMemory, un juego de memoria con Pokémon."
+    >
+    <meta name="theme-color" content="#6750a4">
+    <title>PokeMemory | Juego de memoria Pokémon</title>
+    <link rel="stylesheet" href="./src/style.css">
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
+    <div class="app-shell">
+      <header class="site-header">
+        <a class="brand" href="#" aria-label="PokeMemory, inicio">
+          <span class="brand-icon" aria-hidden="true"> LOGO </span>
+          <span>PokeMemory</span>
+        </a>
+
+        <p class="header-tagline">¡Entrena tu memoria!</p>
+      </header>
+
+      <main id="app">
+        <!-- Pantalla 1: creación del perfil -->
+        <section id="profile-screen" class="screen">
+          <div class="welcome-card">
+            <span class="eyebrow">¡Bienvenido, entrenador!</span>
+            <h1>Crea tu perfil</h1>
+            <p>
+              Prepárate para poner a prueba tu memoria
+              en el mundo Pokémon.
+            </p>
+
+            <form id="profile-form">
+              <div class="form-group">
+                <label for="username">Nombre de entrenador</label>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  minlength="3"
+                  maxlength="15"
+                  placeholder="Ej. AshKetchum"
+                  autocomplete="nickname"
+                  required
+                >
+                <small>Entre 3 y 15 caracteres.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="pokemon-search">Tu Pokémon favorito</label>
+                <input
+                  id="pokemon-search"
+                  name="pokemon"
+                  type="search"
+                  placeholder="Busca un Pokémon..."
+                  autocomplete="off"
+                  required
+                >
+                <p id="pokemon-feedback" class="helper-text">
+                  Más adelante conectaremos esta búsqueda con PokeAPI.
+                </p>
+              </div>
+
+              <button class="button button-primary" type="submit">
+                ¡Empezar aventura!
+              </button>
+            </form>
+          </div>
+
+          <div class="mascot" aria-hidden="true"> Mascota - iconos o dibujo svg </div>
+        </section>
+
+        <!-- Pantalla 2: juego -->
+        <section id="game-screen" class="screen" hidden>
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">¡A jugar!</span>
+              <h1>Encuentra las parejas</h1>
+            </div>
+            <p id="player-greeting" class="player-greeting"></p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Movimientos</span>
+              <strong id="moves-count">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Parejas</span>
+              <strong id="pairs-count">0 / 6</strong>
+            </article>
+            <article class="stat-card">
+              <span>Tiempo</span>
+              <strong id="timer">00:00</strong>
+            </article>
+          </div>
+
+          <div id="game-board" class="game-board"
+            aria-label="Tablero de cartas de memoria">
+            <button class="memory-card" type="button" aria-label="Carta 1">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 2">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 3">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 4">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 5">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 6">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 7">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 8">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 9">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 10">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 11">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 12">
+              <span aria-hidden="true">?</span>
+            </button>
+          </div>
+
+          <div class="game-actions">
+            <button id="restart-button" class="button button-secondary"
+              type="button">
+              Reiniciar partida
+            </button>
+            <button id="ranking-from-game" class="button button-primary"
+              type="button">
+              Ver ranking
+            </button>
+          </div>
+        </section>
+
+        <!-- Pantalla 3: ranking -->
+        <section id="ranking-screen" class="screen" hidden>
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Salón de campeones</span>
+              <h1>Ranking Pokémon</h1>
+            </div>
+            <span aria-hidden="true" class="trophy">🏆</span>
+          </div>
+
+          <div class="ranking-card">
+            <p class="ranking-description">
+              Los mejores entrenadores y sus resultados.
+            </p>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Puesto</th>
+                    <th scope="col">Entrenador</th>
+                    <th scope="col">Movimientos</th>
+                    <th scope="col">Tiempo</th>
+                  </tr>
+                </thead>
+                <tbody id="ranking-list">
+                  <tr>
+                    <td colspan="4" class="empty-ranking">
+                      Todavía no hay resultados. ¡Sé el primero!
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="game-actions">
+            <button id="back-to-game" class="button button-secondary"
+              type="button">
+              Volver al juego
+            </button>
+            <button id="new-profile" class="button button-primary"
+              type="button">
+              Cambiar perfil
+            </button>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>PokeMemory · Un reto para auténticos entrenadores</p>
+      </footer>
+    </div>
+
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>
