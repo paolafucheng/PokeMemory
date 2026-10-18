@@ -1,0 +1,17 @@
+{
+  "name": "pokememory",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "lint:html": "htmlhint index.html"
+  },
+  "devDependencies": {
+    "htmlhint": "^1.9.2",
+    "vite": "^8.3.0"
+  }
+}
