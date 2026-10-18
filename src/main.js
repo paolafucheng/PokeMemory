@@ -56,3 +56,21 @@ profileForm.addEventListener('submit', (event) => {
 
   showScreen(gameScreen);
 });
+
+
+document.querySelector('#ranking-from-game')
+  .addEventListener('click', () => {
+    showScreen(rankingScreen);
+  });
+
+document.querySelector('#back-to-game')
+  .addEventListener('click', () => {
+    showScreen(gameScreen);
+  });
+
+document.querySelector('#new-profile')
+  .addEventListener('click', () => {
+    profileForm.reset();
+    showScreen(profileScreen);
+    usernameInput.focus();
+  });
