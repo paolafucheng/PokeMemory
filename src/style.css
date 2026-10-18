@@ -347,3 +347,97 @@ th {
   }
 }
 
+/* RESPONSIVE: MÓVILES */
+
+@media (max-width: 600px) {
+  .app-shell {
+    width: min(100% - 24px, 1080px);
+  }
+
+  .site-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 4px;
+    padding-block: 18px;
+  }
+
+  .header-tagline {
+    margin: 0;
+    font-size: 0.9rem;
+  }
+
+  .screen {
+    padding-top: 16px;
+    padding-bottom: 32px;
+  }
+
+  .welcome-card,
+  .ranking-card {
+    padding: 20px;
+  }
+
+  .section-heading {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Estadísticas */
+  .stats-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .stat-card {
+    min-width: 0;
+    padding: 12px 8px;
+    text-align: center;
+  }
+
+  .stat-card span {
+    font-size: 0.75rem;
+    overflow-wrap: anywhere;
+  }
+
+  .stat-card strong {
+    font-size: clamp(1rem, 5vw, 1.35rem);
+  }
+
+  /* Tablero de cartas */
+  .game-board {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .memory-card {
+    border-radius: 14px;
+    font-size: clamp(1.25rem, 7vw, 2rem);
+  }
+
+  /* Botones de acción */
+  .game-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .game-actions .button {
+    width: 100%;
+  }
+
+  /* Tabla del ranking */
+  .table-wrapper {
+    max-width: 100%;
+    overflow-x: auto;
+  }
+
+  th,
+  td {
+    padding: 12px 8px;
+    font-size: 0.85rem;
+  }
+
+  /* Formularios */
+  .form-group input {
+    font-size: 16px;
+  }
+}
