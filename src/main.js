@@ -34,3 +34,25 @@ function showScreen(screenToShow) {
 
 // La aplicación comienza en la pantalla de creación del perfil
 showScreen(profileScreen);
+
+profileForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  if (!profileForm.reportValidity()) {
+    return;
+  }
+
+  const username = usernameInput.value.trim();
+  const pokemon = pokemonInput.value.trim();
+
+  if (username.length < 3 || username.length > 15 || !pokemon) {
+    return;
+  }
+
+  playerGreeting.textContent = `¡A por todas, ${username}!`;
+
+  // Datos temporales para comprobar el diseño.
+  playerGreeting.dataset.pokemon = pokemon;
+
+  showScreen(gameScreen);
+});
