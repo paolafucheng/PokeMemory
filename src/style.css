@@ -83,3 +83,102 @@ input {
   font-size: 0.85rem;
   text-align: center;
 }
+
+
+/* PANTALLA DE PERFIL */
+
+.welcome-card {
+  width: min(100%, 640px);
+  margin-inline: auto;
+  padding: clamp(24px, 5vw, 48px);
+  border: 1px solid #E7DFF8;
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 8px 28px rgb(50 35 90 / 8%);
+}
+
+.welcome-card h1 {
+  margin: 8px 0;
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  line-height: 1.15;
+}
+
+.welcome-card > p,
+.form-group small,
+.helper-text {
+  color: #716B80;
+  line-height: 1.7;
+}
+
+.eyebrow {
+  color: #6750A4;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+#profile-form,
+.form-group {
+  display: grid;
+  gap: 12px;
+}
+
+#profile-form {
+  gap: 24px;
+  margin-top: 32px;
+}
+
+.form-group label {
+  font-weight: 800;
+}
+
+.form-group input {
+  width: 100%;
+  min-height: 50px;
+  padding: 12px 14px;
+  border: 1px solid #D8D0E8;
+  border-radius: 12px;
+  background: #FFFEFF;
+  color: #29243A;
+}
+
+.form-group small,
+.helper-text {
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.button-primary {
+  background: #6750A4;
+  color: white;
+}
+
+.button-primary:hover {
+  background: #503887;
+}
+
+.button-secondary {
+  border: 1px solid #E7DFF8;
+  background: white;
+  color: #6750A4;
+}
+
+.mascot {
+  margin-top: 24px;
+  text-align: center;
+  font-size: 2.5rem;
+}
+
