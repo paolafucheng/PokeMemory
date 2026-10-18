@@ -1,6 +1,13 @@
 
 import './style.css';
 
+// Contentando con PokeAPI
+import { getPokemonList } from './pokeapi.js';
+
+getPokemonList()
+  .then((pokemon) => console.log(pokemon))
+  .catch((error) => console.error(error));
+
 // Las pantallas
 const profileScreen = document.querySelector('#profile-screen');
 const gameScreen = document.querySelector('#game-screen');
@@ -96,3 +103,4 @@ function validateUsername(username) {
 console.log(validateUsername('Pika')); // true
 console.log(validateUsername('AB')); // false
 console.log(validateUsername('NombreDemasiadoLargo')); // false
+
