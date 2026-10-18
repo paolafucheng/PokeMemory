@@ -324,3 +324,26 @@ th {
   color: #716B80;
   text-align: center;
 }
+
+
+/* RESPONSIVE: TABLETS */
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .app-shell {
+    width: min(100% - 40px, 1080px);
+  }
+
+  .welcome-card,
+  .ranking-card {
+    padding: 32px;
+  }
+
+  .game-board {
+    gap: 12px;
+  }
+
+  .section-heading {
+    gap: 16px;
+  }
+}
+
