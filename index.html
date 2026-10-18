@@ -25,7 +25,61 @@
 
         <p class="header-tagline">¡Entrena tu memoria!</p>
       </header>
-    
+
+      <main id="app">
+        <!-- Pantalla 1: creación del perfil -->
+        <section id="profile-screen" class="screen">
+          <div class="welcome-card">
+            <span class="eyebrow">¡Bienvenido, entrenador!</span>
+            <h1>Crea tu perfil</h1>
+            <p>
+              Prepárate para poner a prueba tu memoria
+              en el mundo Pokémon.
+            </p>
+
+            <form id="profile-form">
+              <div class="form-group">
+                <label for="username">Nombre de entrenador</label>
+                <input
+                  id="username"
+                  name="username"
+                  type="text"
+                  minlength="3"
+                  maxlength="15"
+                  placeholder="Ej. AshKetchum"
+                  autocomplete="nickname"
+                  required
+                >
+                <small>Entre 3 y 15 caracteres.</small>
+              </div>
+
+              <div class="form-group">
+                <label for="pokemon-search">Tu Pokémon favorito</label>
+                <input
+                  id="pokemon-search"
+                  name="pokemon"
+                  type="search"
+                  placeholder="Busca un Pokémon..."
+                  autocomplete="off"
+                  required
+                >
+                <p id="pokemon-feedback" class="helper-text">
+                  Más adelante conectaremos esta búsqueda con PokeAPI.
+                </p>
+              </div>
+
+              <button class="button button-primary" type="submit">
+                ¡Empezar aventura!
+              </button>
+            </form>
+          </div>
+
+          <div class="mascot" aria-hidden="true"> 
+            <img src="./src/assets/pokemon.png" alt="Imagen de Charmander, Pikachu, Squirtle y Bulbasur" width="300" height="80">
+          </div>
+        </section>
+
+      </main>
     </div>
 
     <script type="module" src="/src/main.js"></script>
