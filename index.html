@@ -79,6 +79,84 @@
           </div>
         </section>
 
+        <!-- Pantalla 2: juego -->
+        <section id="game-screen" class="screen" hidden>
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">¡A jugar!</span>
+              <h1>Encuentra las parejas</h1>
+            </div>
+            <p id="player-greeting" class="player-greeting"></p>
+          </div>
+
+          <div class="stats-grid">
+            <article class="stat-card">
+              <span>Movimientos</span>
+              <strong id="moves-count">0</strong>
+            </article>
+            <article class="stat-card">
+              <span>Parejas</span>
+              <strong id="pairs-count">0 / 6</strong>
+            </article>
+            <article class="stat-card">
+              <span>Tiempo</span>
+              <strong id="timer">00:00</strong>
+            </article>
+          </div>
+
+          <div id="game-board" class="game-board"
+            aria-label="Tablero de cartas de memoria">
+            <button class="memory-card" type="button" aria-label="Carta 1">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 2">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 3">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 4">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 5">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 6">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 7">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 8">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 9">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 10">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 11">
+              <span aria-hidden="true">?</span>
+            </button>
+            <button class="memory-card" type="button" aria-label="Carta 12">
+              <span aria-hidden="true">?</span>
+            </button>
+          </div>
+
+          <div class="game-actions">
+            <button id="restart-button" class="button button-secondary"
+              type="button">
+              Reiniciar partida
+            </button>
+            <button id="ranking-from-game" class="button button-primary"
+              type="button">
+              Ver ranking
+            </button>
+          </div>
+        </section>
+
+        
       </main>
     </div>
 
