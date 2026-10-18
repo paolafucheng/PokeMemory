@@ -156,13 +156,71 @@
           </div>
         </section>
 
-        
+        <!-- Pantalla 3: ranking -->
+        <section id="ranking-screen" class="screen" hidden>
+          <div class="section-heading">
+            <div>
+              <span class="eyebrow">Salón de campeones</span>
+              <h1>Ranking Pokémon</h1>
+            </div>
+            <span aria-hidden="true" class="trophy">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trophy">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M8 21l8 0" />
+                <path d="M12 17l0 4" />
+                <path d="M7 4l10 0" />
+                <path d="M17 4v8a5 5 0 0 1 -10 0v-8" />
+                <path d="M3 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+                <path d="M17 9a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+              </svg>
+            </span>
+          </div>
+
+          <div class="ranking-card">
+            <p class="ranking-description">
+              Los mejores entrenadores y sus resultados.
+            </p>
+
+            <div class="table-wrapper">
+              <table>
+                <thead>
+                  <tr>
+                    <th scope="col">Puesto</th>
+                    <th scope="col">Entrenador</th>
+                    <th scope="col">Movimientos</th>
+                    <th scope="col">Tiempo</th>
+                  </tr>
+                </thead>
+                <tbody id="ranking-list">
+                  <tr>
+                    <td colspan="4" class="empty-ranking">
+                      Todavía no hay resultados. ¡Sé el primero!
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="game-actions">
+            <button id="back-to-game" class="button button-secondary"
+              type="button">
+              Volver al juego
+            </button>
+            <button id="new-profile" class="button button-primary"
+              type="button">
+              Cambiar perfil
+            </button>
+          </div>
+        </section>
       </main>
+
+      <footer class="site-footer">
+        <p>PokeMemory · Un reto para auténticos entrenadores</p>
+        <small>Hecho por Paola Fucheng</small>
+      </footer>
     </div>
 
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="./src/main.js"></script>
   </body>
-
 </html>
-
-
