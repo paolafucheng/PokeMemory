@@ -84,3 +84,15 @@ document.querySelector('#restart-button')
     // El reinicio completo se implementará con la lógica del juego.
     showScreen(gameScreen);
   });
+
+// Validación del username
+function validateUsername(username) {
+  const cleanUsername = username.trim();
+
+  return cleanUsername.length >= 3
+    && cleanUsername.length <= 15;
+}
+
+console.log(validateUsername('Pika')); // true
+console.log(validateUsername('AB')); // false
+console.log(validateUsername('NombreDemasiadoLargo')); // false
