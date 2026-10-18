@@ -274,3 +274,53 @@ input {
   gap: 12px;
   margin-top: 28px;
 }
+
+
+/* PANTALLA DE RANKING */
+
+.ranking-card {
+  width: 100%;
+  padding: clamp(16px, 3vw, 32px);
+  margin-inline: auto;
+  border: 1px solid #E7DFF8;
+  border-radius: 22px;
+  background: white;
+  box-shadow: 0 8px 28px rgb(50 35 90 / 8%);
+}
+
+.ranking-description {
+  color: #716B80;
+  line-height: 1.7;
+}
+
+.trophy {
+  font-size: 3rem;
+}
+
+.table-wrapper {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #E7DFF8;
+}
+
+th {
+  color: #6750A4;
+  font-size: 0.9rem;
+}
+
+.empty-ranking {
+  padding-block: 32px;
+  color: #716B80;
+  text-align: center;
+}
