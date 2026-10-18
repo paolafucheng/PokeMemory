@@ -74,3 +74,13 @@ document.querySelector('#new-profile')
     showScreen(profileScreen);
     usernameInput.focus();
   });
+
+document.querySelector('#restart-button')
+  .addEventListener('click', () => {
+    movesCount.textContent = '0';
+    pairsCount.textContent = '0 / 6';
+    timer.textContent = '00:00';
+
+    // El reinicio completo se implementará con la lógica del juego.
+    showScreen(gameScreen);
+  });
