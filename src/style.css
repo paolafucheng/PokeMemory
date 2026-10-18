@@ -441,3 +441,41 @@ th {
     font-size: 16px;
   }
 }
+
+
+/* MÓVILES PEQUEÑOS */
+
+@media (max-width: 360px) {
+  .welcome-card,
+  .ranking-card {
+    padding: 16px;
+  }
+
+  .game-board {
+    gap: 6px;
+  }
+
+  .stat-card {
+    padding: 10px 4px;
+  }
+
+  .stat-card span {
+    font-size: 0.7rem;
+  }
+
+  .brand {
+    font-size: 1.25rem;
+  }
+}
+
+/* ACCESIBILIDAD */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
