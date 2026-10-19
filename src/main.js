@@ -1,12 +1,7 @@
 
 import './style.css';
-
-// Contentando con PokeAPI
 import { getPokemonList } from './pokeapi.js';
 
-getPokemonList()
-  .then((pokemon) => console.log(pokemon))
-  .catch((error) => console.error(error));
 
 // Las pantallas
 const profileScreen = document.querySelector('#profile-screen');
@@ -104,3 +99,22 @@ console.log(validateUsername('Pika')); // true
 console.log(validateUsername('AB')); // false
 console.log(validateUsername('NombreDemasiadoLargo')); // false
 
+// Conectando con PokeAPI
+getPokemonList()
+  .then((pokemon) => console.log(pokemon))
+  .catch((error) => console.error(error));
+
+// Buscando Pokemon
+function searchPokemon(pokemonList, query) {
+  const searchTerm = query.trim().toLowerCase();
+
+  if (searchTerm.length === 0) {
+    return [];
+  }
+
+  return pokemonList
+    .filter((pokemon) =>
+      pokemon.name.startsWith(searchTerm)
+    )
+    .slice(0, 6);
+}
